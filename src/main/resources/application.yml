@@ -1,0 +1,14 @@
+resilience4j:
+  circuitbreaker:
+    instances:
+      myInstance:
+        base-config: default
+    configs:
+      default:
+        sliding-window-size: 100
+        register-health-indicator: true
+        minimum-number-of-calls: 10
+        failure-rate-threshold: 50
+        wait-duration-in-open-state:
+          10000
+
